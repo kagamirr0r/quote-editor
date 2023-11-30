@@ -1,0 +1,11 @@
+services:
+  quote-editor:
+    container_name: quote-editor
+    build: .
+    volumes:
+      - .:/app
+    command: sh -c "rm -f tmp/pids/server.pid && ./bin/dev"
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true
